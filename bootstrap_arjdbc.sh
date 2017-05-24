@@ -18,8 +18,8 @@ sudo -u ubuntu -i git clone https://github.com/sstephenson/ruby-build.git /home/
 
 echo installing JRuby
 sudo -H -u ubuntu bash -i -c 'source  /home/ubuntu/.bashrc'
-sudo -H -u ubuntu bash -i -c 'rbenv install jruby-9.1.5.0'
-sudo -H -u ubuntu bash -i -c 'rbenv global jruby-9.1.5.0'
+sudo -H -u ubuntu bash -i -c 'rbenv install jruby-9.1.9.0'
+sudo -H -u ubuntu bash -i -c 'rbenv global jruby-9.1.9.0'
 sudo -H -u ubuntu bash -i -c 'gem install bundle'
 
 echo setting up PostgreSQL
