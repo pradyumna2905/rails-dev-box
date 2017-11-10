@@ -14,7 +14,7 @@ echo setting up rbenv
 sudo -u ubuntu -i git clone https://github.com/rbenv/rbenv.git /home/ubuntu/.rbenv
 sudo -u ubuntu -i echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /home/ubuntu/.bashrc
 sudo -u ubuntu -i echo 'eval "$(rbenv init -)"' >> /home/ubuntu/.bashrc
-sudo -u ubuntu -i git clone https://github.com/sstephenson/ruby-build.git /home/ubuntu/.rbenv/plugins/ruby-build
+sudo -u ubuntu -i git clone https://github.com/rbenv/ruby-build.git /home/ubuntu/.rbenv/plugins/ruby-build
 
 echo installing JRuby
 sudo -H -u ubuntu bash -i -c 'source  /home/ubuntu/.bashrc'
