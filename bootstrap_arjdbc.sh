@@ -24,10 +24,10 @@ sudo -H -u ubuntu bash -i -c 'gem install bundle'
 
 echo setting up PostgreSQL
 sudo -u ubuntu -i echo 'export PGHOST=localhost' >> /home/ubuntu/.bashrc
-rm /etc/postgresql/9.5/main/pg_hba.conf
-echo 'local all all trust' >> /etc/postgresql/9.5/main/pg_hba.conf
-echo 'host all all 127.0.0.1/32 trust' >> /etc/postgresql/9.5/main/pg_hba.conf
-echo 'host all all ::1/128 trust' >> /etc/postgresql/9.5/main/pg_hba.conf
+rm /etc/postgresql/9.6/main/pg_hba.conf
+echo 'local all all trust' >> /etc/postgresql/9.6/main/pg_hba.conf
+echo 'host all all 127.0.0.1/32 trust' >> /etc/postgresql/9.6/main/pg_hba.conf
+echo 'host all all ::1/128 trust' >> /etc/postgresql/9.6/main/pg_hba.conf
 service postgresql restart
 echo "create user rails superuser;" | sudo -u postgres psql
 
