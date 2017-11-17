@@ -11,19 +11,19 @@ install OpenJDK openjdk-8-jdk
 install Ant ant
 
 echo setting up rbenv
-sudo -u ubuntu -i git clone https://github.com/rbenv/rbenv.git /home/ubuntu/.rbenv
-sudo -u ubuntu -i echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /home/ubuntu/.bashrc
-sudo -u ubuntu -i echo 'eval "$(rbenv init -)"' >> /home/ubuntu/.bashrc
-sudo -u ubuntu -i git clone https://github.com/rbenv/ruby-build.git /home/ubuntu/.rbenv/plugins/ruby-build
+sudo -u vagrant -i git clone https://github.com/rbenv/rbenv.git /home/vagrant/.rbenv
+sudo -u vagrant -i echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /home/vagrant/.bashrc
+sudo -u vagrant -i echo 'eval "$(rbenv init -)"' >> /home/vagrant/.bashrc
+sudo -u vagrant -i git clone https://github.com/rbenv/ruby-build.git /home/vagrant/.rbenv/plugins/ruby-build
 
 echo installing JRuby
-sudo -H -u ubuntu bash -i -c 'source  /home/ubuntu/.bashrc'
-sudo -H -u ubuntu bash -i -c 'rbenv install jruby-9.1.14.0'
-sudo -H -u ubuntu bash -i -c 'rbenv global jruby-9.1.14.0'
-sudo -H -u ubuntu bash -i -c 'gem install bundle'
+sudo -H -u vagrant bash -i -c 'source  /home/vagrant/.bashrc'
+sudo -H -u vagrant bash -i -c 'rbenv install jruby-9.1.14.0'
+sudo -H -u vagrant bash -i -c 'rbenv global jruby-9.1.14.0'
+sudo -H -u vagrant bash -i -c 'gem install bundle'
 
 echo setting up PostgreSQL
-sudo -u ubuntu -i echo 'export PGHOST=localhost' >> /home/ubuntu/.bashrc
+sudo -u vagrant -i echo 'export PGHOST=localhost' >> /home/vagrant/.bashrc
 rm /etc/postgresql/9.6/main/pg_hba.conf
 echo 'local all all trust' >> /etc/postgresql/9.6/main/pg_hba.conf
 echo 'host all all 127.0.0.1/32 trust' >> /etc/postgresql/9.6/main/pg_hba.conf
