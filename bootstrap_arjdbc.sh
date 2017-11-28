@@ -30,9 +30,12 @@ echo 'host all all 127.0.0.1/32 trust' >> /etc/postgresql/9.6/main/pg_hba.conf
 echo 'host all all ::1/128 trust' >> /etc/postgresql/9.6/main/pg_hba.conf
 service postgresql restart
 echo "create user rails superuser;" | sudo -u postgres psql
+echo "create user arjdbc superuser;" | sudo -u postgres psql
 
 echo setting up MySQL
 mysql -uroot -proot <<SQL
 set password = '';
+CREATE USER 'arjdbc'@'localhost' IDENTIFIED BY 'arjdbc';
+GRANT ALL PRIVILEGES ON * . * TO  'arjdbc'@'localhost';
 SQL
 echo 'rails-dev-box runs JRuby now!'
