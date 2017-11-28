@@ -38,4 +38,9 @@ set password = '';
 CREATE USER 'arjdbc'@'localhost' IDENTIFIED BY 'arjdbc';
 GRANT ALL PRIVILEGES ON * . * TO  'arjdbc'@'localhost';
 SQL
+
+echo updating environment variable to run Active Record unit tests with JRuby
+sudo -u vagrant -i echo 'export AR_JDBC=true' >> /home/vagrant/.bashrc
+
+sudo -u vagrant -i echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /home/vagrant/.bashrc
 echo 'rails-dev-box runs JRuby now!'
